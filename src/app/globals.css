@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fff7ed;
+  /* Orange-tinted off-whites */
+  --color-gold-100: #ffedd5;
+  --color-gold-200: #fed7aa;
+  --color-gold-300: #fdba74;
+  --color-gold-400: #fb923c;
+  --color-gold-500: #f97316;
+  --color-gold-600: #ea580c;
+  /* Premium Orange: #EA580C */
+  --color-gold-700: #c2410c;
+  --color-gold-800: #9a3412;
+  --color-gold-900: #7c2d12;
+
+  --color-champagne: #F5E6D3;
+  --color-charcoal: #1A1A1A;
+  --color-slate-900: #0f172a;
+
+  --color-premium-orange: #EA580C;
+  --color-premium-orange-light: #F97316;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1A1A1A;
+  /* Deep Charcoal */
+  --gold-primary: #EA580C;
+  /* Mapped Gold to Orange for consistent usage */
+  --premium-orange: #EA580C;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* Ultra HD Fluid Typography */
+html {
+  font-size: clamp(16px, 1vw, 22px);
+  /* Scales from 16px on mobile to 22px on 4K */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-lato), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-playfair), serif;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--premium-orange);
+  border-radius: 5px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c2410c;
+}
+
+/* Premium Utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Updated Gradient for Orange Theme */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #EA580C 0%, #FDBA74 50%, #EA580C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200%;
+  }
+}
