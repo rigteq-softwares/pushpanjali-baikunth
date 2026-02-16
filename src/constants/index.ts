@@ -57,15 +57,14 @@ export const AMENITIES = [
 
 export const GALLERY_IMAGES = [
   "/Gallery-1.jpg",
-  "/Gallery-2.jpg",
+  "/Gallery-2-new1.jpg",
   "/Gallery-3.jpg",
   "/Gallery-4.jpg",
-  "/Gallery-5.jpg",
   "/Gallery-6.jpg",
   "/Gallery-7.jpg",
   "/Gallery-8.jpg",
   "/Gallery-9.jpg",
-  "/Gallery-10.jpg",
+  "/Gallery-10-new.jpg",
   "/Gallery-11.jpg",
   "/Gallery-12.jpg",
   "/Gallery-13.jpg",
@@ -81,7 +80,7 @@ export const GALLERY_IMAGES = [
   "/Gallery-23.jpg",
   "/Gallery-24.jpg",
   "/Gallery-25.jpg",
-  "/Gallery-26.jpg",
+  "/Gallery-5.jpg",
 ];
 
 export const FLOOR_PLANS = [
