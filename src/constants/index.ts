@@ -32,7 +32,6 @@ export const ABOUT_CONTENT = {
 
 export const AMENITIES = [
   { title: "Intercom facility", icon: "Phone" },
-  { title: "Gurukul", icon: "BookOpen" },
   { title: "Power backup", icon: "Zap" },
   { title: "Grand gated entry", icon: "DoorOpen" },
   { title: "Round the clock security", icon: "ShieldCheck" },
@@ -57,30 +56,18 @@ export const AMENITIES = [
 
 export const GALLERY_IMAGES = [
   "/Gallery-1.jpg",
-  "/Gallery-2-new1.jpg",
   "/Gallery-3.jpg",
   "/Gallery-4.jpg",
   "/Gallery-6.jpg",
   "/Gallery-7.jpg",
   "/Gallery-8.jpg",
-  "/Gallery-9.jpg",
-  "/Gallery-10-new.jpg",
-  "/Gallery-11.jpg",
-  "/Gallery-12.jpg",
-  "/Gallery-13.jpg",
-  "/Gallery-14.jpg",
-  "/Gallery-15.jpg",
+  "/Gallery-10.jpg",
   "/Gallery-16.jpg",
   "/Gallery-17.jpg",
-  "/Gallery-18.jpg",
   "/Gallery-19.jpg",
   "/Gallery-20.jpg",
-  "/Gallery-21.jpg",
-  "/Gallery-22.jpg",
-  "/Gallery-23.jpg",
-  "/Gallery-24.jpg",
   "/Gallery-25.jpg",
-  "/Gallery-5.jpg",
+  "/Gallery-26.jpg",
 ];
 
 export const FLOOR_PLANS = [

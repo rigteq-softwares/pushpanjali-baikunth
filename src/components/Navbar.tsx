@@ -15,7 +15,6 @@ export default function Navbar() {
         { label: "About Us", href: "/" },
         { label: "Properties", href: "/properties" },
         { label: "Contact", href: "/contact" },
-        { label: "Newsletter", href: "/newsletter", icon: true },
     ];
 
     return (
@@ -41,16 +40,6 @@ export default function Navbar() {
                                 <span className="text-white/20">|</span>
                                 <Link href="#" className="hover:text-orange-500 transition-colors">Contact</Link>
                             </nav>
-
-                            <div className="hidden lg:block w-[1px] h-3 bg-white/20" />
-
-                            {/* Newsletter */}
-                            <Link href="#" className="flex items-center gap-1.5 md:gap-2 text-[9px] font-bold uppercase tracking-widest text-white/90 hover:text-orange-500 transition-colors">
-                                <Mail size={10} className="text-white md:w-3 md:h-3" />
-                                <span className="hidden sm:inline">Newsletter</span>
-                            </Link>
-
-                            <div className="w-[1px] h-3 bg-white/20" />
 
                             {/* Social Icons */}
                             <div className="flex items-center gap-3 md:gap-5">

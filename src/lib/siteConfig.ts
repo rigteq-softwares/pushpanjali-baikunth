@@ -10,12 +10,12 @@ export const siteConfig = {
     },
     contact: {
         phone: {
-            display: "+91 92200 34415",
-            value: "+919220034415",
+            display: "+91 92200 34414",
+            value: "+919220034414",
         },
         altPhone: {
-            display: "+91 92200 34416",
-            value: "+919220034416",
+            display: "+91 92200 34418",
+            value: "+919220034418",
         },
         email: "Sales@edistonerealestates.com",
         address: "Office No 626, Sixth Floor, Aditya High Street, NH 24, Ghaziabad, Uttar Pradesh 201009",

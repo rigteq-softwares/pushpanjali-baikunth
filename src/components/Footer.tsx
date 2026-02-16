@@ -92,7 +92,7 @@ export default function Footer() {
                                 <Phone size={18} className="text-orange-600 mt-1 flex-shrink-0" />
                                 <div className="flex flex-col text-slate-400 text-sm">
                                     <span>{siteConfig.contact.phone.display}</span>
-                                    <span>{siteConfig.contact.altPhone?.display || "+91 9220034416"}</span>
+                                    <span>{siteConfig.contact.altPhone?.display || "+91 9220034418"}</span>
                                 </div>
                             </li>
                             <li className="flex gap-4 items-center">
