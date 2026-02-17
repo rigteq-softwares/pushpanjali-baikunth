@@ -14,19 +14,19 @@ export default function Location() {
             subtitle: "Direct access"
         },
         {
-            number: "05",
+            number: "10",
             title: "Mins to Metro",
-            subtitle: "Vaishali Station"
+            subtitle: "Shaheed Sthal"
         },
         {
-            number: "15",
+            number: "10-15",
             title: "Mins to Delhi",
             subtitle: "Via NH-24 Express"
         },
         {
-            number: "20",
+            number: "30",
             title: "Mins to Noida",
-            subtitle: "Seamless connectivity"
+            subtitle: "Yamuna Expressway"
         }
     ];
 
@@ -117,7 +117,7 @@ export default function Location() {
                             <div className="space-y-8">
                                 {highlights.map((item, idx) => (
                                     <div key={idx} className="flex items-start gap-6 group">
-                                        <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-600 transition-all duration-300">
+                                        <div className="flex-shrink-0 w-15 h-15 rounded-3xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-600 transition-all duration-300">
                                             {item.icon ? (
                                                 <div className="group-hover:text-white transition-colors">
                                                     {item.icon}

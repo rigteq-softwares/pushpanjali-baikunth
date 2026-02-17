@@ -11,8 +11,7 @@ export default function Hero() {
                     {/* Main Content Area */}
                     <div className="flex-1">
                         <div className="text-center mb-6 md:mb-8">
-                            <span className="text-[50px] md:text-xs tracking-[0.5em] font-medium text-gray-400 uppercase">Edistone</span>
-                            <h1 className="text-3xl md:text-5xl font-serif text-gray-800 mt-1 mb-3 md:mt-2 md:mb-4">Apartment</h1>
+                            <h1 className="text-3xl md:text-5xl font-serif text-gray-800 mt-1 mb-3 md:mt-2 md:mb-4">Edistone Apartment</h1>
                             <div className="w-10 md:w-12 h-[1px] bg-gray-200 mx-auto mb-4" />
                             <p className="text-[8px] md:text-[10px] tracking-widest text-gray-400 uppercase">
                             </p>

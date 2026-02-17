@@ -1,19 +1,53 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { GALLERY_IMAGES } from "@/constants";
 
 export default function Gallery() {
     const [displayCount, setDisplayCount] = useState(8);
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const hasMore = displayCount < GALLERY_IMAGES.length;
 
     const showMore = () => {
         setDisplayCount(prev => Math.min(prev + 8, GALLERY_IMAGES.length));
     };
+
+    const handleNext = useCallback(() => {
+        if (selectedIndex !== null) {
+            setSelectedIndex((selectedIndex + 1) % GALLERY_IMAGES.length);
+        }
+    }, [selectedIndex]);
+
+    const handlePrev = useCallback(() => {
+        if (selectedIndex !== null) {
+            setSelectedIndex((selectedIndex - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length);
+        }
+    }, [selectedIndex]);
+
+    const handleKeyDown = useCallback((e: KeyboardEvent) => {
+        if (selectedIndex === null) return;
+        if (e.key === "ArrowRight") handleNext();
+        if (e.key === "ArrowLeft") handlePrev();
+        if (e.key === "Escape") setSelectedIndex(null);
+    }, [selectedIndex, handleNext, handlePrev]);
+
+    useEffect(() => {
+        window.addEventListener("keydown", handleKeyDown);
+        if (selectedIndex !== null) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+            document.body.style.overflow = "unset";
+        };
+    }, [selectedIndex, handleKeyDown]);
 
     return (
         <Section id="gallery" className="bg-white py-24 md:py-32">
@@ -30,7 +64,7 @@ export default function Gallery() {
                             <div className="h-[2px] w-8 bg-[#EA580C]" />
                         </div>
                         <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-[#1a2b3c] mb-8 tracking-tight">
-                            Gallery of <span className="italic font-normal">Excellence</span>
+                            <span className="italic font-normal">Gallery of Excellence</span>
                         </h2>
                     </motion.div>
                 </div>
@@ -45,6 +79,7 @@ export default function Gallery() {
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: (index % 8) * 0.05 }}
+                                onClick={() => setSelectedIndex(index)}
                                 className="relative aspect-[4/3] overflow-hidden group cursor-pointer shadow-lg border border-neutral-100 bg-neutral-50"
                             >
                                 <Image
@@ -80,6 +115,64 @@ export default function Gallery() {
                     </div>
                 )}
             </Container>
+
+            {/* Lightbox Modal */}
+            <AnimatePresence>
+                {selectedIndex !== null && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 md:p-10"
+                        onClick={() => setSelectedIndex(null)}
+                    >
+                        <motion.button
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-50 p-2"
+                            onClick={() => setSelectedIndex(null)}
+                        >
+                            <X size={32} strokeWidth={1.5} />
+                        </motion.button>
+
+                        <button
+                            className="absolute left-4 md:left-10 text-white/50 hover:text-white transition-colors z-50 p-2"
+                            onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+                        >
+                            <ChevronLeft size={48} strokeWidth={1} />
+                        </button>
+
+                        <button
+                            className="absolute right-4 md:right-10 text-white/50 hover:text-white transition-colors z-50 p-2"
+                            onClick={(e) => { e.stopPropagation(); handleNext(); }}
+                        >
+                            <ChevronRight size={48} strokeWidth={1} />
+                        </button>
+
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                            className="relative w-full max-w-6xl aspect-[4/3] md:aspect-video flex items-center justify-center"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <Image
+                                src={GALLERY_IMAGES[selectedIndex]}
+                                alt="Gallery Lightbox"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+
+                            {/* Caption/Counter */}
+                            <div className="absolute -bottom-12 left-0 right-0 text-center text-white/60 text-xs tracking-widest uppercase">
+                                {selectedIndex + 1} / {GALLERY_IMAGES.length}
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </Section>
     );
 }
