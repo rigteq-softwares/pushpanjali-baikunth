@@ -73,7 +73,7 @@ export default function Footer() {
                             <li className="flex gap-4 items-start">
                                 <MapPin size={18} className="text-orange-600 mt-1 flex-shrink-0" />
                                 <span className="text-slate-400 text-sm leading-relaxed">
-                                    {siteConfig.contact.address}
+                                    {(siteConfig.contact as any).corporateAddress || siteConfig.contact.address}
                                 </span>
                             </li>
                             <li className="flex gap-4 items-center">

@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin } from "luc
 export const CONTACT_INFO = {
   phone: "+91 98765 43210", // Placeholder - Update with real number if found
   email: "info@edistonerealestates.com", // Placeholder
-  address: "123, Luxury Lane, Premium Area, City, State - 000000", // Placeholder
+  address: "626, 6th Floor, Aditya High Street, Lal Kuan, Ghaziabad",
   website: "https://edistonerealestates.vercel.app/",
 };
 

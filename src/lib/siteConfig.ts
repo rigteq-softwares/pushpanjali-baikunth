@@ -18,7 +18,8 @@ export const siteConfig = {
             value: "+919220034418",
         },
         email: "sales@edistonerealestates.com",
-        address: "103/1, Aditya Suntech City, Sec-5, Vasundhara, Ghaziabad, 201012",
+        address: "626, 6th Floor, Aditya High Street, Lal Kuan, Ghaziabad",
+        corporateAddress: "103/1, Aditya Suntech City, Sec-5, Vasundhara, Ghaziabad - 201012",
         mapUrl: "https://www.google.com/maps/embed?pb=...", // Keep existing or update if specific coordinates found
     },
     legal: {
