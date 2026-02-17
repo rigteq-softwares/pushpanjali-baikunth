@@ -19,7 +19,7 @@ export default function FloorPlans() {
                         <div className="h-[2px] w-8 bg-[#EA580C]" />
                     </div>
                     <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-[#1a2b3c] mb-8 tracking-tight">
-                        Floor <span className="italic font-normal">Plans</span>
+                        <span className="italic font-normal">Floor Plans</span>
                     </h2>
                 </div>
 

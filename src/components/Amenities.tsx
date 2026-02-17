@@ -23,7 +23,7 @@ export default function Amenities() {
                             <div className="h-[2px] w-8 bg-[#EA580C]" />
                         </div>
                         <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-[#1a2b3c] mb-8 tracking-tight">
-                            World-Class <span className="italic font-normal">Amenities</span>
+                            <span className="italic font-normal">World-Class Amenities</span>
                         </h2>
                         <p className="text-[#1a2b3c]/60 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
                             A curated selection of experiences designed to elevate every moment of your daily life.

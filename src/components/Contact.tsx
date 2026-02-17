@@ -45,7 +45,7 @@ export default function Contact() {
                                             <Phone size={18} />
                                         </div>
                                         <a href={`tel:${siteConfig.contact.phone.value}`} className="text-lg md:text-xl font-bold text-white hover:text-orange-600 transition-colors">
-                                            {siteConfig.contact.phone.display} / 16
+                                            {siteConfig.contact.phone.display} / 18
                                         </a>
                                     </div>
                                 </div>

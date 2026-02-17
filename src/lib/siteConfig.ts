@@ -10,15 +10,15 @@ export const siteConfig = {
     },
     contact: {
         phone: {
-            display: "+91 92200 34415",
-            value: "+919220034415",
+            display: "+91 92200 34414",
+            value: "+919220034414",
         },
         altPhone: {
-            display: "+91 92200 34416",
-            value: "+919220034416",
+            display: "+91 92200 34418",
+            value: "+919220034418",
         },
-        email: "Sales@edistonerealestates.com",
-        address: "Office No 626, Sixth Floor, Aditya High Street, NH 24, Ghaziabad, Uttar Pradesh 201009",
+        email: "sales@edistonerealestates.com",
+        address: "103/1, Aditya Suntech City, Sec-5, Vasundhara, Ghaziabad, 201012",
         mapUrl: "https://www.google.com/maps/embed?pb=...", // Keep existing or update if specific coordinates found
     },
     legal: {
@@ -28,9 +28,10 @@ export const siteConfig = {
     },
     social: {
         whatsapp: "https://wa.me/919220034415?text=Hi%2C%20I%27m%20interested%20in%20Edistone%20properties.",
-        facebook: "#",
-        instagram: "#",
+        facebook: "https://www.facebook.com/profile.php?id=61576824804533",
+        instagram: "https://www.instagram.com/edistone_realestate/",
         linkedin: "#",
+        youtube: "#",
     },
     theme: {
         colors: {

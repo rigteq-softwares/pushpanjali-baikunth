@@ -12,10 +12,9 @@ export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const topNavLinks = [
-        { label: "About Us", href: "/" },
+        { label: "About Us", href: "#about" },
         { label: "Properties", href: "/properties" },
-        { label: "Contact", href: "/contact" },
-        { label: "Newsletter", href: "/newsletter", icon: true },
+        { label: "Contact", href: "#contact" },
     ];
 
     return (
@@ -35,22 +34,12 @@ export default function Navbar() {
                         <div className="flex items-center gap-2 md:gap-8">
                             {/* Nav Links Group */}
                             <nav className="hidden lg:flex items-center gap-4 text-[9px] font-bold uppercase tracking-widest text-white/90">
-                                <Link href="#" className="hover:text-orange-500 transition-colors">About Us</Link>
+                                <Link href="#about" className="hover:text-orange-500 transition-colors">About Us</Link>
                                 <span className="text-white/20">|</span>
                                 <Link href="#" className="hover:text-orange-500 transition-colors">Properties</Link>
                                 <span className="text-white/20">|</span>
-                                <Link href="#" className="hover:text-orange-500 transition-colors">Contact</Link>
+                                <Link href="#contact" className="hover:text-orange-500 transition-colors">Contact</Link>
                             </nav>
-
-                            <div className="hidden lg:block w-[1px] h-3 bg-white/20" />
-
-                            {/* Newsletter */}
-                            <Link href="#" className="flex items-center gap-1.5 md:gap-2 text-[9px] font-bold uppercase tracking-widest text-white/90 hover:text-orange-500 transition-colors">
-                                <Mail size={10} className="text-white md:w-3 md:h-3" />
-                                <span className="hidden sm:inline">Newsletter</span>
-                            </Link>
-
-                            <div className="w-[1px] h-3 bg-white/20" />
 
                             {/* Social Icons */}
                             <div className="flex items-center gap-3 md:gap-5">
@@ -87,11 +76,11 @@ export default function Navbar() {
 
                         {/* Main Navigation - Perfectly Centered */}
                         <nav className="hidden lg:flex items-center justify-center gap-8 text-[11px] font-bold uppercase tracking-[0.15em]">
-                            {NAV_LINKS.filter(link => ["About", "Amenities", "Floor Plans", "Gallery", "Location", "Contact"].includes(link.label)).map((link) => (
+                            {NAV_LINKS.filter(link => ["About", "Amenities", "Floor Plan", "Gallery", "Location", "Contact"].includes(link.label)).map((link) => (
                                 <Link
                                     key={link.label}
                                     href={link.href}
-                                    className="hover:text-white/70 transition-colors relative"
+                                    className="hover:text-white/70 transition-colors relative whitespace-nowrap"
                                 >
                                     {link.label}
                                 </Link>

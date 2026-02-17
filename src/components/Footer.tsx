@@ -31,10 +31,16 @@ export default function Footer() {
                             Creating landmarks that redefine commercial and residential living.
                         </p>
                         <div className="flex gap-3 pt-2">
-                            {[Facebook, Instagram, Linkedin, Youtube].map((Icon, i) => (
+                            {[
+                                { Icon: Facebook, href: siteConfig.social.facebook },
+                                { Icon: Instagram, href: siteConfig.social.instagram },
+                                { Icon: Linkedin, href: siteConfig.social.linkedin },
+                                { Icon: Youtube, href: siteConfig.social.youtube } // Youtube not in config, keeping #
+                            ].map(({ Icon, href }, i) => (
                                 <Link
                                     key={i}
-                                    href="#"
+                                    href={href}
+                                    target={href !== "#" ? "_blank" : undefined}
                                     className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-orange-600 hover:border-orange-600 transition-all duration-300"
                                 >
                                     <Icon size={16} />
@@ -79,7 +85,7 @@ export default function Footer() {
                             </li>
                             <li className="flex gap-4 items-center">
                                 <Mail size={18} className="text-orange-600 flex-shrink-0" />
-                                <span className="text-slate-400 text-sm">director@edistonerealestates.com</span>
+                                <span className="text-slate-400 text-sm">info@edistonerealestates.com</span>
                             </li>
                         </ul>
                     </div>
@@ -92,7 +98,7 @@ export default function Footer() {
                                 <Phone size={18} className="text-orange-600 mt-1 flex-shrink-0" />
                                 <div className="flex flex-col text-slate-400 text-sm">
                                     <span>{siteConfig.contact.phone.display}</span>
-                                    <span>{siteConfig.contact.altPhone?.display || "+91 9220034416"}</span>
+                                    <span>{siteConfig.contact.altPhone?.display || "+91 9220034418"}</span>
                                 </div>
                             </li>
                             <li className="flex gap-4 items-center">
