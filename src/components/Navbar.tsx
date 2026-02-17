@@ -59,54 +59,52 @@ export default function Navbar() {
             </div>
 
             {/* Main Primary Bar (Orange) */}
-            <div className="bg-[#EA580C] text-white h-16 md:h-20 flex items-center shadow-lg">
-                <Container className="max-w-none px-4 md:px-10 lg:px-16">
-                    <div className="grid grid-cols-2 lg:grid-cols-3 items-center w-full">
-                        {/* Logo: EDISTONE REAL ESTATES - Far Left */}
-                        <div className="flex justify-start">
-                            <Link href="/" className="group flex flex-col leading-none">
-                                <span className="text-2xl md:text-3xl font-serif font-bold tracking-tight text-white uppercase">
-                                    EDISTONE
-                                </span>
-                                <span className="text-[0.6rem] md:text-[0.7rem] tracking-[0.3em] uppercase text-white/80 font-bold mt-1">
-                                    REAL ESTATES
-                                </span>
-                            </Link>
-                        </div>
-
-                        {/* Main Navigation - Perfectly Centered */}
-                        <nav className="hidden lg:flex items-center justify-center gap-8 text-[11px] font-bold uppercase tracking-[0.15em]">
-                            {NAV_LINKS.filter(link => ["About", "Amenities", "Floor Plan", "Gallery", "Location", "Contact"].includes(link.label)).map((link) => (
-                                <Link
-                                    key={link.label}
-                                    href={link.href}
-                                    className="hover:text-white/70 transition-colors relative whitespace-nowrap"
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
-                        </nav>
-
-                        {/* Right: CTA & Mobile Toggle - Far Right */}
-                        <div className="flex items-center justify-end gap-6">
-                            <Link
-                                href={`tel:${siteConfig.contact.phone.value}`}
-                                className="hidden md:flex items-center gap-3 bg-white px-6 py-3 font-bold text-xs tracking-[0.1em] text-[#EA580C] hover:bg-neutral-100 transition-all duration-300 shadow-xl"
-                            >
-                                <Phone size={14} className="fill-current" />
-                                <span>{siteConfig.contact.phone.display}</span>
-                            </Link>
-
-                            <button
-                                className="lg:hidden p-2 text-white hover:bg-white/10 transition-colors"
-                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                aria-label="Toggle menu"
-                            >
-                                {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-                            </button>
-                        </div>
+            <div className="bg-[#EA580C] text-white h-16 md:h-20 shadow-lg">
+                <div className="w-full h-full flex items-center justify-between px-4 md:px-8 lg:px-16 lg:grid lg:grid-cols-3">
+                    {/* Logo: EDISTONE REAL ESTATES - Far Left */}
+                    <div className="flex justify-start">
+                        <Link href="/" className="group flex flex-col leading-none">
+                            <span className="text-2xl md:text-3xl font-serif font-bold tracking-tight text-white uppercase">
+                                EDISTONE
+                            </span>
+                            <span className="text-[0.6rem] md:text-[0.7rem] tracking-[0.3em] uppercase text-white/80 font-bold mt-1">
+                                REAL ESTATES
+                            </span>
+                        </Link>
                     </div>
-                </Container>
+
+                    {/* Main Navigation - Perfectly Centered */}
+                    <nav className="hidden lg:flex items-center justify-center gap-8 text-[11px] font-bold uppercase tracking-[0.15em]">
+                        {NAV_LINKS.filter(link => ["About", "Amenities", "Floor Plan", "Gallery", "Location", "Contact"].includes(link.label)).map((link) => (
+                            <Link
+                                key={link.label}
+                                href={link.href}
+                                className="hover:text-white/70 transition-colors relative whitespace-nowrap"
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
+                    </nav>
+
+                    {/* Right: CTA & Mobile Toggle - Far Right */}
+                    <div className="flex items-center justify-end gap-6">
+                        <Link
+                            href={`tel:${siteConfig.contact.phone.value}`}
+                            className="hidden md:flex items-center gap-3 bg-white px-6 py-3 font-bold text-xs tracking-[0.1em] text-[#EA580C] hover:bg-neutral-100 transition-all duration-300 shadow-xl"
+                        >
+                            <Phone size={14} className="fill-current" />
+                            <span>{siteConfig.contact.phone.display}</span>
+                        </Link>
+
+                        <button
+                            className="lg:hidden p-2 text-white hover:bg-white/10 transition-colors"
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            aria-label="Toggle menu"
+                        >
+                            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                        </button>
+                    </div>
+                </div>
             </div>
 
             {/* Mobile Menu */}
