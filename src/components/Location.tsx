@@ -19,7 +19,7 @@ export default function Location() {
             subtitle: "Shaheed Sthal"
         },
         {
-            number: "10-15",
+            number: "15",
             title: "Mins to Delhi",
             subtitle: "Via NH-24 Express"
         },
